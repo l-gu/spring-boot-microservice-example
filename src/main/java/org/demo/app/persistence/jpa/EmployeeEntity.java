@@ -4,33 +4,36 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
+/**
+ * JPA entity with database mapping
+ *
+ */
 @Entity
 @Table(name="EMPLOYEE")
-public class Employee {
+public class EmployeeEntity {
 
     @Id
-    @Column(nullable = false, updatable = false)
+    @Column(name="ID", nullable = false, updatable = false)
     private Long id;
 
-    @Column(nullable = false, length = 40)
+    @Column(name="FIRST_NAME", nullable = false, length = 40)
     private String firstName;
 
-    @Column(length = 40)
+    @Column(name="LAST_NAME", length = 40)
     private String lastName;
 
-    @Column
+    @Column(name="BIRTH_DATE")
     private LocalDate birthDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_group_id")
-    private Group employeeGroup;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "employee_group_id")
+//    private Group employeeGroup;
+    @Column(name="GROUP_ID")
+    private Integer groupId;
 
     public Long getId() {
         return id;
@@ -64,12 +67,18 @@ public class Employee {
         this.birthDate = birthDate;
     }
 
-    public Group getEmployeeGroup() {
-        return employeeGroup;
+//    public Group getEmployeeGroup() {
+//        return employeeGroup;
+//    }
+//
+//    public void setEmployeeGroup(final Group employeeGroup) {
+//        this.employeeGroup = employeeGroup;
+//    }
+    public Integer getGroupId() {
+        return groupId;
     }
-
-    public void setEmployeeGroup(final Group employeeGroup) {
-        this.employeeGroup = employeeGroup;
+    public void setGroupId(Integer employeeGroup) {
+        this.groupId = employeeGroup;
     }
 
 }

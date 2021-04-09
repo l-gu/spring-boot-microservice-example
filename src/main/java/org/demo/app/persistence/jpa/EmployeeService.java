@@ -13,12 +13,12 @@ import org.springframework.web.server.ResponseStatusException;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
-    private final GroupRepository groupRepository;
+//    private final GroupRepository groupRepository;
 
     public EmployeeService(final EmployeeRepository employeeRepository,
             final GroupRepository groupRepository) {
         this.employeeRepository = employeeRepository;
-        this.groupRepository = groupRepository;
+//        this.groupRepository = groupRepository;
     }
 
     public List<EmployeeDTO> findAll() {
@@ -35,13 +35,13 @@ public class EmployeeService {
     }
 
     public Long create(final EmployeeDTO employeeDTO) {
-        final Employee employee = new Employee();
+        final EmployeeEntity employee = new EmployeeEntity();
         mapToEntity(employeeDTO, employee);
         return employeeRepository.save(employee).getId();
     }
 
     public void update(final Long id, final EmployeeDTO employeeDTO) {
-        final Employee employee = employeeRepository.findById(id)
+        final EmployeeEntity employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         mapToEntity(employeeDTO, employee);
         employeeRepository.save(employee);
@@ -51,25 +51,28 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    private EmployeeDTO mapToDTO(final Employee employee, final EmployeeDTO employeeDTO) {
+    private EmployeeDTO mapToDTO(final EmployeeEntity employee, final EmployeeDTO employeeDTO) {
         employeeDTO.setId(employee.getId());
         employeeDTO.setFirstName(employee.getFirstName());
         employeeDTO.setLastName(employee.getLastName());
         employeeDTO.setBirthDate(employee.getBirthDate());
-        employeeDTO.setEmployeeGroup(employee.getEmployeeGroup() == null ? null : employee.getEmployeeGroup().getId());
+//        employeeDTO.setEmployeeGroup(employee.getEmployeeGroup() == null ? null : employee.getEmployeeGroup().getId());
+        employeeDTO.setGroupId(employee.getGroupId());
         return employeeDTO;
     }
 
-    private Employee mapToEntity(final EmployeeDTO employeeDTO, final Employee employee) {
+    private EmployeeEntity mapToEntity(final EmployeeDTO employeeDTO, final EmployeeEntity employee) {
+        employee.setId(employeeDTO.getId());
         employee.setFirstName(employeeDTO.getFirstName());
         employee.setLastName(employeeDTO.getLastName());
         employee.setBirthDate(employeeDTO.getBirthDate());
-        if (employeeDTO.getEmployeeGroup() != null && 
-                (employee.getEmployeeGroup() == null || !employee.getEmployeeGroup().getId().equals(employeeDTO.getEmployeeGroup()))) {
-            final Group employeeGroup = groupRepository.findById(employeeDTO.getEmployeeGroup())
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "employeeGroup not found"));
-            employee.setEmployeeGroup(employeeGroup);
-        }
+//        if (employeeDTO.getEmployeeGroup() != null && 
+//                (employee.getEmployeeGroup() == null || !employee.getEmployeeGroup().getId().equals(employeeDTO.getEmployeeGroup()))) {
+//            final Group employeeGroup = groupRepository.findById(employeeDTO.getEmployeeGroup())
+//                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "employeeGroup not found"));
+//            employee.setEmployeeGroup(employeeGroup);
+//        }
+        employee.setGroupId(employeeDTO.getGroupId());
         return employee;
     }
 

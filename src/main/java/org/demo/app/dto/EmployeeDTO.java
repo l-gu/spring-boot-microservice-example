@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 public class EmployeeDTO {
 
+    @NotNull
     private Long id;
 
     @NotNull
@@ -18,46 +19,41 @@ public class EmployeeDTO {
 
     private LocalDate birthDate;
 
-    private Integer employeeGroup;
+    private Integer groupId;
 
     public Long getId() {
         return id;
     }
-
-    public void setId(final Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public String getFirstName() {
         return firstName;
     }
-
-    public void setFirstName(final String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
-
-    public void setLastName(final String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
     public LocalDate getBirthDate() {
         return birthDate;
     }
-
-    public void setBirthDate(final LocalDate birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Integer getEmployeeGroup() {
-        return employeeGroup;
+    public Integer getGroupId() {
+        return groupId;
     }
-
-    public void setEmployeeGroup(final Integer employeeGroup) {
-        this.employeeGroup = employeeGroup;
+    public void setGroupId(Integer employeeGroup) {
+        this.groupId = employeeGroup;
     }
 
 }
