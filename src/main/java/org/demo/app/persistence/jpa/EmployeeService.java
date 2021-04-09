@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+//TODO : remote "http" and "web.server" adherence (like in GroupService)
 
 @Service
 public class EmployeeService {

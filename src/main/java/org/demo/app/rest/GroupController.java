@@ -49,6 +49,7 @@ public class GroupController {
 
     @PostMapping
     public ResponseEntity<Integer> createGroup(@RequestBody @Valid final GroupDTO groupDTO) {
+    	// Return HttpStatus.CREATED only if really created
         return new ResponseEntity<>(groupService.create(groupDTO), HttpStatus.CREATED);
     }
 
