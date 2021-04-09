@@ -1,10 +1,7 @@
-package org.demo.app.service;
+package org.demo.app.persistence.jpa;
 
-import org.demo.app.domain.Employee;
-import org.demo.app.domain.Group;
-import org.demo.app.model.EmployeeDTO;
-import org.demo.app.repos.EmployeeRepository;
-import org.demo.app.repos.GroupRepository;
+import org.demo.app.dto.EmployeeDTO;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,5 @@
 package org.demo.app.config;
 
-import org.demo.app.model.ErrorResponse;
-import org.demo.app.model.FieldError;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package org.demo.app.model;
+package org.demo.app.dto;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

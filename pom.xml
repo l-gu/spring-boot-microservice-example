@@ -30,11 +30,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        
+		<!-- JDBC Driver : required only at runtime (present in runtime and test classpath) -->
+        <!-- JDBC Driver for Postgresql -->
+        <!-- 
         <dependency>
             <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
+            <artifactId>postgresql</artifactId> 
+            <scope>runtime</scope> 
         </dependency>
+         -->
+        <!-- JDBC Driver for H2 -->
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		        
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>

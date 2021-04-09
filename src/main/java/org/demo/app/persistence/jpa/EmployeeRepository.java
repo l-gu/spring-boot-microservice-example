@@ -1,6 +1,5 @@
-package org.demo.app.repos;
+package org.demo.app.persistence.jpa;
 
-import org.demo.app.domain.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

@@ -1,4 +1,4 @@
-package org.demo.app.model;
+package org.demo.app.config;
 
 
 public class FieldError {

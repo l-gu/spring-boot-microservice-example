@@ -1,8 +1,14 @@
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/my-app}
-    username: ${JDBC_DATABASE_USERNAME:postgres}
-    password: ${JDBC_DATABASE_PASSWORD:<<YOUR_PASSWORD>>}
+    # --- PostgreSQL database
+    # url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/my-app}
+    # username: ${JDBC_DATABASE_USERNAME:postgres}
+    # password: ${JDBC_DATABASE_PASSWORD:<<YOUR_PASSWORD>>}
+    
+    # --- H2 in-memory database
+    url: ${JDBC_DATABASE_URL:jdbc:h2:mem:testdb}
+    # username: ${JDBC_DATABASE_USERNAME:sa}
+    # password: ${JDBC_DATABASE_PASSWORD:}
   dbcp2:
     max-wait-millis: 30000
     validation-query: "SELECT 1"

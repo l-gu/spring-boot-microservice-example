@@ -1,4 +1,4 @@
-package org.demo.app.model;
+package org.demo.app.dto;
 
 import java.time.LocalDate;
 import javax.validation.constraints.NotNull;

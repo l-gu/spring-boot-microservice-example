@@ -1,9 +1,11 @@
 package org.demo.app.rest;
 
-import org.demo.app.model.EmployeeDTO;
-import org.demo.app.service.EmployeeService;
 import java.util.List;
+
 import javax.validation.Valid;
+
+import org.demo.app.dto.EmployeeDTO;
+import org.demo.app.persistence.jpa.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -1,0 +1,20 @@
+
+DROP TABLE IF EXISTS EMPLOYEE;
+DROP TABLE IF EXISTS WORKGROUP;
+
+CREATE TABLE WORKGROUP (
+  id         INT PRIMARY KEY NOT NULL,
+  name       VARCHAR(80) NOT NULL
+);
+
+INSERT INTO WORKGROUP (id, name) VALUES
+  (1, 'First group'),
+  (2, 'Second group'),
+  (3, 'Third group');
+  
+CREATE TABLE EMPLOYEE (
+  id         INT PRIMARY KEY NOT NULL,
+  firstName  VARCHAR(40) NOT NULL,
+  lastName   VARCHAR(40) NOT NULL,
+  birthDate  DATE DEFAULT NULL
+);

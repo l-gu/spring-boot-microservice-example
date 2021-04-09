@@ -1,7 +1,8 @@
 package org.demo.app.rest;
 
-import org.demo.app.model.GroupDTO;
-import org.demo.app.service.GroupService;
+import org.demo.app.dto.GroupDTO;
+import org.demo.app.persistence.jpa.GroupService;
+
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;

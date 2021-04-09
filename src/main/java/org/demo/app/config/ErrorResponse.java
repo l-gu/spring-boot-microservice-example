@@ -1,4 +1,4 @@
-package org.demo.app.model;
+package org.demo.app.config;
 
 import java.util.List;
 
