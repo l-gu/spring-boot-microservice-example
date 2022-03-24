@@ -1,0 +1,5 @@
+
+Interface Driven Controllers with Spring 
+( web requests using usual Java interfaces)
+
+See https://www.baeldung.com/spring-interface-driven-controllers
